@@ -95,7 +95,7 @@ $ env -i TERM=vt220 su -l -a skey
 otp-md5 99 obsd91335
 S/Key Password: EGG LARD GROW HOG DRAG LAIN
 
-# id
+#id
 uid=0(root) gid=0(wheel) ...
 
 
@@ -115,5 +115,5 @@ $ echo 554d5eedfd75fb96cc74d52609505216 > /var/db/yubikey/root.key
 $ env -i TERM=vt220 su -l -a yubikey
 Password: krkhgtuhdnjclrikikklulkldlutreul
 
-# id
+#id
 uid=0(root) gid=0(wheel) ...
