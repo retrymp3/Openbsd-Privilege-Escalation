@@ -1,6 +1,5 @@
 echo '#!/bin/sh
-echo "*****autoroot_by_retrymp3******"
-echo " "
+
 echo "Checking wether $(whoami) is part of the auth group..."
 echo " "
 id
