@@ -24,12 +24,11 @@ incomplete and should use issetugid() instead:
 113    if (geteuid() == getuid()) {
 114       /* don't allow setuid apps to use LIBGL_DRIVERS_PATH */
 115       libPaths = getenv("LIBGL_DRIVERS_PATH");
-------------------------------------------------------------------------------
+
 
 A local attacker can exploit this vulnerability and dlopen() their own
 driver to obtain the privileges of the group "auth":
 
-------------------------------------------------------------------------------
 $ id
 uid=32767(nobody) gid=32767(nobody) groups=32767(nobody)
 
@@ -84,7 +83,7 @@ privileges can add an S/Key entry (a file in /etc/skey) for the user
 or rename it, because /etc/skey is sticky; a simple workaround exists,
 and is left as an exercise for the interested reader):
 
-------------------------------------------------------------------------------
+
 $ id
 uid=32767(nobody) gid=11(auth) groups=32767(nobody)
 
@@ -98,14 +97,14 @@ S/Key Password: EGG LARD GROW HOG DRAG LAIN
 
 # id
 uid=0(root) gid=0(wheel) ...
-------------------------------------------------------------------------------
+
 
 If YubiKey is enabled (via login.conf), a local attacker with "auth"
 privileges can add a YubiKey entry (two files in /var/db/yubikey) for
 the user "root" (if these files already exist, the attacker can simply
 remove or rename them, because /var/db/yubikey is not sticky):
 
-------------------------------------------------------------------------------
+
 $ id
 uid=32767(nobody) gid=11(auth) groups=32767(nobody)
 
